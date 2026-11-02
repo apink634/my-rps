@@ -45,6 +45,6 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `.venv/bin/python check
 ### Work record
 
 - Issue: https://github.com/apink634/my-rps/issues/1
-- Pull request / CI: add actual URLs when they exist.
+- Pull request / CI: [PR #2](https://github.com/apink634/my-rps/pull/2) (merged); [Python checks](https://github.com/apink634/my-rps/actions/runs/41459616290) passed.
 - Implementation: One independent round in [game.py](game.py), with nine literal outcomes and a real request/result check in [tests/test_game.py](tests/test_game.py), plus browser play and replay in [tests/e2e/test_round.py](tests/e2e/test_round.py).
 - Checks: `.venv/bin/python check.py` passed: Black, Pylint, 23 non-browser tests, and 6 Chromium browser tests. `git diff --check` passed. Browser observation: player chose rock, computer chose rock, and the page showed a tie; the student said this result makes sense.
