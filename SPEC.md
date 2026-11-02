@@ -27,7 +27,7 @@ Results are from the **player’s perspective**. `determine_winner(player, compu
 
 ### Agreed plan
 
-Before implementation, predict one matchup and explain it with your local coding agent. Discuss a short plan and checks. Once it makes sense, ask the agent to replace this paragraph with the agreed plan, preserving the expected results above. Continue in the same chat.
+Implement one independent round with no score or saved history. The predicted matchup is player rock versus computer paper, which returns `lose` and displays “Computer wins”. Check all nine literal move pairings, a real submitted round with a fixed computer move, and a real-browser round with replay. Include a valid losing round such as rock versus paper, and verify that an unsupported move such as `lizard` is rejected with HTTP 400 and a helpful explanation.
 
 ### Checks
 
@@ -44,7 +44,7 @@ Use `unit`, `integration`, and `e2e` pytest markers. Run `.venv/bin/python check
 
 ### Work record
 
-- Issue: add your own issue URL.
+- Issue: https://github.com/apink634/my-rps/issues/1
 - Pull request / CI: add actual URLs when they exist.
-- Implementation: **Not implemented.** The shell is supplied; `game.py` is unfinished.
-- Checks: **Rules not verified.** Supplied request/browser tests cover the shell only. After implementation, record actual full-check results and your browser observations here; put detailed results in the PR. Passing formatting and analysis alone is not evidence of correct rules.
+- Implementation: One independent round in [game.py](game.py), with nine literal outcomes and a real request/result check in [tests/test_game.py](tests/test_game.py), plus browser play and replay in [tests/e2e/test_round.py](tests/e2e/test_round.py).
+- Checks: `.venv/bin/python check.py` passed: Black, Pylint, 23 non-browser tests, and 6 Chromium browser tests. `git diff --check` passed. Browser observation: player chose rock, computer chose rock, and the page showed a tie; the student said this result makes sense.
